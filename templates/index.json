@@ -74,6 +74,34 @@
         "padding_bottom": 0
       }
     },
+    "product_card": {
+      "type": "product-card",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "00000Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>222223333333Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -202,6 +230,7 @@
   "order": [
     "image_banner",
     "rich_text",
+    "product_card",
     "featured_collection",
     "collage",
     "video",
