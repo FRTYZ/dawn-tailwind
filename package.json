@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "dev": "run-p -sr shopify:dev watch",
+    "shopify:dev": "shopify theme dev -s byte-case-study",
+    "build": "vite build --minify",
+    "watch": "vite build --watch"
+  },
   "devDependencies": {
     "@shopify/cli": "^3.68.0",
     "@shopify/theme": "^3.58.2",
