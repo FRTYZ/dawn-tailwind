@@ -93,11 +93,10 @@
             >
               {{ block.settings.caption | escape }}
             </p>
-
           {%- when 'button' -%}
             <div
               class="
-                flex w-fit
+                flex w-fit capitalize
                 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
                 {% if block.settings.button_style_secondary %} font-black border-b-2 border-gray-500 {% endif %}
               "
