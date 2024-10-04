@@ -120,7 +120,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/bg.png",
-        "image_overlay_opacity": 40,
+        "image_overlay_opacity": 100,
         "image_height": "min-h-[60rem]",
         "image_resize": "object-cover",
         "content_alignment": "text-left",
