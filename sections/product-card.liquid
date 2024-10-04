@@ -31,8 +31,9 @@
           {%- when 'button' -%}
             <div
               class="
+                flex w-fit
                 {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
-                {% if block.settings.button_style_secondary %} font-black border-b-2 border-gray-500 w-fit {% endif %}
+                {% if block.settings.button_style_secondary %} font-black border-b-2 border-gray-500 {% endif %}
               "
               {{ block.shopify_attributes }}
               {% if settings.animations_reveal_on_scroll %}
@@ -48,7 +49,7 @@
                   {% else %}
                     href="{{ block.settings.button_link }}"
                   {% endif %}
-                  class="leading-[17.4px] text-[12.8px] {% if block.settings.button_style_secondary %} bg-white text-black font-black {% else %} button--primary{% endif %}"
+                  class="leading-[17.4px] text-[12.8px]  font-black {% if block.settings.button_style_secondary %} bg-white text-black {% else %} bg-black text-white px-5 py-6 {% endif %}"
                 >
                   {{- block.settings.button_label | escape -}}
                 </a>
