@@ -124,10 +124,7 @@
         "image_height": "min-h-[60rem]",
         "image_resize": "object-cover",
         "content_alignment": "text-left",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "color_scheme": "scheme-1"
       }
     },
     "featured_collection": {
