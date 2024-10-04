@@ -3048,6 +3048,7 @@
           "section_padding_heading": "Section Padding",
           "image_padding_heading": "Image Padding",
           "text_padding_heading": "Text Padding",
+          "content_padding_heading": "Content Padding",
           "section_padding_x": "Right and left section padding",
           "section_padding_y": "Top and left section padding",
           "padding_x": "Right and left padding",

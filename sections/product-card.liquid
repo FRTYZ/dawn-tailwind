@@ -9,6 +9,10 @@
     padding-block: {{ section.settings.section_padding_y }}px;
   }
 
+  .content-{{ section.id }}-padding {
+    padding-block: {{ section.settings.content_padding_y }}rem;
+  }
+
   @media screen and (max-width: 750px) {
     .image-{{ section.id }}-padding {
       padding-right: {{ section.settings.image_padding_right | times: 0 | round: 0 }}px;
@@ -18,6 +22,10 @@
     .section-{{ section.id }}-padding {
       padding-inline: {{ section.settings.section_padding_x | times: 0.75 | round: 0 }}px;
       padding-block: {{ section.settings.section_padding_y | times: 0.75 | round: 0 }}px;
+    }
+
+    .content-{{ section.id }}-padding {
+      padding-block: {{ section.settings.content_padding_y  | times: 0 | round: 0 }}rem;
     }
   }
 
@@ -59,7 +67,7 @@
         </div>
       {%- endif -%}
     </div>
-    <div class="col-auto lg:col-span-6 space-y-10">
+    <div class="col-auto lg:col-span-6 space-y-10 content-{{ section.id }}-padding">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
@@ -241,6 +249,20 @@
       "unit": "px",
       "label": "t:sections.product-card.settings.padding.padding_left",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.product-card.settings.padding.content_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "content_padding_y",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "rem",
+      "label": "t:sections.product-card.settings.padding.padding_y",
+      "default": 8
     }
   ],
   "blocks": [
