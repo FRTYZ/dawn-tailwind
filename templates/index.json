@@ -119,8 +119,11 @@
         "button_iabDwq"
       ],
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
+        "image": "shopify://shop_images/bg.png",
+        "image_overlay_opacity": 40,
+        "image_height": "min-h-[60rem]",
+        "image_resize": "object-cover",
+        "content_alignment": "text-left",
         "color_scheme": "scheme-1",
         "full_width": true,
         "padding_top": 40,
