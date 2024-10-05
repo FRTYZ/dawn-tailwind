@@ -24,7 +24,7 @@ You can find a more detailed version of our theme code principles in the [contri
 
 ## Getting started
 
-![alt text](https://raw.githubusercontent.com/FRTYZ/dawn-tailwind/main/preview.png)
+![alt text](https://raw.githubusercontent.com/FRTYZ/dawn-tailwind/main/preview-image.png)
 
 ## 🛠 Technologies 
 - Tailwind CSS
