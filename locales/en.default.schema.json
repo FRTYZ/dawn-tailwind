@@ -2990,10 +2990,6 @@
         "name": "Rich text"
       }
     },
-    // Product
-
-
-
     "product-card": {
       "name": "Product card",
       "settings": {
