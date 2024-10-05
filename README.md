@@ -11,6 +11,7 @@
 [Theme Store submission](#theme-store-submission) |
 [License](#license)
 
+
 Dawn represents a HTML-first, JavaScript-only-as-needed approach to theme development. It's Shopify's first source available theme with performance, flexibility, and [Online Store 2.0 features](https://www.shopify.com/partners/blog/shopify-online-store) built-in and acts as a reference for building Shopify themes.
 
 * **Web-native in its purest form:** Themes run on the [evergreen web](https://www.w3.org/2001/tag/doc/evergreen-web/). We leverage the latest web browsers to their fullest, while maintaining support for the older ones through progressive enhancement—not polyfills.
@@ -20,30 +21,91 @@ Dawn represents a HTML-first, JavaScript-only-as-needed approach to theme develo
 
 You can find a more detailed version of our theme code principles in the [contribution guide](https://github.com/Shopify/dawn/blob/main/.github/CONTRIBUTING.md#theme-code-principles).
 
+
 ## Getting started
-We recommend using Dawn as a starting point for theme development. [Learn more on Shopify.dev](https://shopify.dev/themes/getting-started/create).
 
-> If you're building a theme for the Shopify Theme Store, then you can use Dawn as a starting point. However, the theme that you submit needs to be [substantively different from Dawn](https://shopify.dev/themes/store/requirements#uniqueness) so that it provides added value for merchants. Learn about the [ways that you can use Dawn](https://shopify.dev/themes/tools/dawn#ways-to-use-dawn).
+![alt text](https://raw.githubusercontent.com/FRTYZ/dawn-tailwind/main/preview.png)
 
-Please note that the main branch may include code for features not yet released. The "stable" version of Dawn is available in the theme store.
+## 🛠 Technologies 
+- Tailwind CSS
+- Swiper JS
+- Vite
 
-## Staying up to date with Dawn changes
+## 🚀 Live (Demo)
 
-Say you're building a new theme off Dawn but you still want to be able to pull in the latest changes, you can add a remote `upstream` pointing to this Dawn repository.
+https://case-study-byte.myshopify.com/
 
-1. Navigate to your local theme folder.
-2. Verify the list of remotes and validate that you have both an `origin` and `upstream`:
-```sh
-git remote -v
+## 💻 Development 
+Steps to run the project on your local
+
+1. Clone the project with git.
+
+    ```
+    git clone https://github.com/FRTYZ/dawn-tailwind.git
+    ```
+
+2. Install npm packages using the following commands
+
+    ```
+    npm install
+    ```
+
+3. Create a development store by going to https://shopify.dev/.
+
+4. Install Shopify cli globally with npm
+
+    ```
+    npm install -g @shopify/cli@latest @shopify/theme
+    ```
+
+5. Connect to your store with this command
+
+    ```
+    npm run dev
+    ```
+
+    ![alt text](https://raw.githubusercontent.com/FRTYZ/dawn-tailwind/main/connect-store-command.png)
+
+    ![alt text](https://raw.githubusercontent.com/FRTYZ/dawn-tailwind/main/connect-store-cli.png)
+
+    ![alt text](https://raw.githubusercontent.com/FRTYZ/dawn-tailwind/main/connect-store.png)
+
+6. You can access from the local port in the terminal
+
+    ![alt text](https://raw.githubusercontent.com/FRTYZ/dawn-tailwind/main/connect-store-preview.png)
+
+6. Upload the store where you created the design
+
+    ```
+    shopify theme push
+    ```
+
+8. You can get the design to your local using this command and typing the store domain
+
+    ```
+    shopify theme pull --store <store_domain>.myshopify.com
+    ```   
+
+## Package.json
+
 ```
-3. If you don't see an `upstream`, you can add one that points to Shopify's Dawn repository:
-```sh
-git remote add upstream https://github.com/Shopify/dawn.git
-```
-4. Pull in the latest Dawn changes into your repository:
-```sh
-git fetch upstream
-git pull upstream main
+{
+  "scripts": {
+    "dev": "run-p -sr shopify:dev watch",
+    "shopify:dev": "shopify theme dev -s case-study-byte",
+    "build": "vite build --minify",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.68.0",
+    "@shopify/theme": "^3.58.2",
+    "autoprefixer": "^10.4.20",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "vite": "^5.4.8"
+  }
+}
 ```
 
 ## Developer tools
