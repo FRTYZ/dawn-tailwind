@@ -23,10 +23,6 @@
       padding-inline: {{ section.settings.section_padding_x | times: 0.75 | round: 0 }}px;
       padding-block: {{ section.settings.section_padding_y | times: 0.75 | round: 0 }}px;
     }
-
-    .content-{{ section.id }}-padding {
-      padding-block: {{ section.settings.content_padding_y  | times: 0 | round: 0 }}rem;
-    }
   }
 
   .image-opacity-{{ section.id }} {
@@ -67,12 +63,12 @@
         </div>
       {%- endif -%}
     </div>
-    <div class="col-auto lg:col-span-6 space-y-10 content-{{ section.id }}-padding">
+    <div class="mt-[-35rem] lg:mt-0 mx-[30px] lg:mx-0 col-auto lg:col-span-6 space-y-10 content-{{ section.id }}-padding">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
             <p
-              class="font-bold w-full lg:w-[400px]  {{ block.settings.heading_content_alignment }} {{ block.settings.heading_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              class="w-full lg:w-[400px] text-[20px] lg:text-[31.25px] text-white lg:text-black font-bold  {{ block.settings.heading_content_alignment }} {{ block.settings.heading_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
               {{ block.shopify_attributes }}
               {% if settings.animations_reveal_on_scroll %}
                 data-cascade
@@ -114,7 +110,7 @@
                   {% else %}
                     href="{{ block.settings.button_link }}"
                   {% endif %}
-                  class="leading-[17.4px] text-[12.8px]  font-black {% if block.settings.button_style_secondary %} bg-white text-black {% else %} bg-black text-white px-5 py-6 {% endif %}"
+                  class="leading-[17.4px] text-[14px] lg:text-[12.8px] font-black {% if block.settings.button_style_secondary %} bg-transparent text-white lg:text-black {% else %} bg-black text-white px-5 py-6 {% endif %}"
                 >
                   {{- block.settings.button_label | escape -}}
                 </a>
@@ -127,7 +123,7 @@
         {%- for block in section.blocks -%}
           {%- if block.type == 'main' -%}
             <!-- Sadece 'card' türündeki blockları işle -->
-            <div class="max-w-sm mx-auto bg-white rounded-lg shadow-md">
+            <div class="h-min max-w-sm mx-auto rounded-lg">
               <!-- Resim Alanı -->
               <picture className="w-full h-50 md:h-full">
                 <img
