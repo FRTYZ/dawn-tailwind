@@ -105,7 +105,7 @@
             "text_size": "16px"
           }
         },
-        "button_iabDwq": {
+        "button": {
           "type": "button",
           "settings": {
             "button_label": "Shop all everyday items",
@@ -113,47 +113,10 @@
             "button_style_secondary": true
           }
         },
-        "main_rmCEFe": {
-          "type": "main",
-          "settings": {
-            "image": "shopify://shop_images/product-1.png",
-            "title": "365 Signature Hoodie",
-            "price": "$33.95"
-          }
-        },
-        "main_kB6WLa": {
-          "type": "main",
-          "settings": {
-            "image": "shopify://shop_images/product-2.png",
-            "title": "Organic Skinny High Waist Jeans",
-            "price": "$35"
-          }
-        },
-        "main_R4rC7m": {
-          "type": "main",
-          "settings": {
-            "image": "shopify://shop_images/product-3.png",
-            "title": "Organic Skinny High Waist Jeans",
-            "price": "$33.95"
-          }
-        },
-        "main_8FCMUf": {
-          "type": "main",
-          "settings": {
-            "image": "shopify://shop_images/theme_cover_image.jpg",
-            "title": "Organic snapboard",
-            "price": "$35.87"
-          }
-        }
       },
       "block_order": [
         "heading",
-        "caption",
-        "button_iabDwq",
-        "main_rmCEFe",
-        "main_kB6WLa",
-        "main_R4rC7m",
-        "main_8FCMUf"
+        "caption"
       ],
       "settings": {
         "image": "shopify://shop_images/bg.png",
