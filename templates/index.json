@@ -93,7 +93,8 @@
           "type": "heading",
           "settings": {
             "heading": "Everyday items, we have something to suit every occasion.",
-            "heading_size": "text-[31.25px]"
+            "heading_size": "text-[31.25px]",
+            "heading_content_alignment": "text-left"
           }
         },
         "caption": {
@@ -111,20 +112,51 @@
             "button_link": "shopify://collections/all",
             "button_style_secondary": true
           }
+        },
+        "main_rmCEFe": {
+          "type": "main",
+          "settings": {
+            "image": "shopify://shop_images/product-1.png",
+            "title": "365 Signature Hoodie",
+            "price": "$33.95"
+          }
+        },
+        "main_kB6WLa": {
+          "type": "main",
+          "settings": {
+            "image": "shopify://shop_images/product-2.png",
+            "title": "Organic Skinny High Waist Jeans",
+            "price": "$35"
+          }
+        },
+        "main_R4rC7m": {
+          "type": "main",
+          "settings": {
+            "image": "shopify://shop_images/product-3.png",
+            "title": "Organic Skinny High Waist Jeans",
+            "price": "$33.95"
+          }
         }
       },
       "block_order": [
         "heading",
         "caption",
-        "button_iabDwq"
+        "button_iabDwq",
+        "main_rmCEFe",
+        "main_kB6WLa",
+        "main_R4rC7m"
       ],
       "settings": {
         "image": "shopify://shop_images/bg.png",
         "image_overlay_opacity": 100,
         "image_height": "min-h-[60rem]",
         "image_resize": "object-cover",
-        "content_alignment": "text-left",
-        "color_scheme": "scheme-1"
+        "color_scheme": "scheme-1",
+        "section_padding_x": 0,
+        "section_padding_y": 24,
+        "image_padding_right": 100,
+        "image_padding_left": 0,
+        "content_padding_y": 8
       }
     },
     "featured_collection": {

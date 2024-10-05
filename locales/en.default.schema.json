@@ -3060,6 +3060,22 @@
         },
       },
       "blocks": {
+        "main": {
+          "name": "Carousel card",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "title": {
+              "label": "Heading",
+              "default": "365 Signature Hoodie"
+            },
+            "price": {
+              "label": "Heading",
+              "default": "$32"
+            }
+          }
+        },
         "heading": {
           "name": "Heading",
           "settings": {

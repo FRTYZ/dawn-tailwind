@@ -13,7 +13,7 @@
     padding-block: {{ section.settings.content_padding_y }}rem;
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 1024px) {
     .image-{{ section.id }}-padding {
       padding-right: {{ section.settings.image_padding_right | times: 0 | round: 0 }}px;
       padding-left:  {{ section.settings.image_padding_left | times: 0 | round: 0 }}px;
@@ -122,6 +122,63 @@
             </div>
         {%- endcase -%}
       {%- endfor -%}
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 pt-12">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'main' -%}
+            <!-- Sadece 'card' türündeki blockları işle -->
+            <div class="max-w-sm mx-auto bg-white rounded-lg shadow-md">
+              <!-- Resim Alanı -->
+              <picture className="w-full h-50 md:h-full">
+                <img
+                  src="{{ block.settings.image | image_url: width: 3840 }}"
+                  alt="{{ block.settings.title }}"
+                  class="w-full h-full aspect-square object-cover"
+                  width="500"
+                  height="600"
+                >
+              </picture>
+              <!-- İçerik Alanı -->
+              <div class="pt-4">
+                <p class="text-[12.8px] font-[400] leading-[20.48px] text-black">{{ block.settings.title }}</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                  <div class="col-auto lg:col-span-1">
+                    <p class="text-[12.8px] font-semibold leading-[20.48px] text-black mt-2 text-xl text-gray-600">
+                      {{ block.settings.price }}
+                    </p>
+                  </div>
+                  <div class="col-auto lg:cols-span-1 text-right self-end">
+                    <input
+                      type="radio"
+                      class="form-radio appearance-none h-5 w-5 bg-green-100 border border-gray-300 rounded-full checked:bg-green-100 checked:border-2 checked:border-white focus:ring-2"
+                      name="radio"
+                      checked
+                    >
+                    <input
+                      type="radio"
+                      class="form-radio appearance-none h-5 w-5 bg-red-300 border border-gray-300 rounded-full checked:bg-red-300 checked:border-2 checked:border-white focus:ring-2"
+                      name="radio"
+                      checked
+                    >
+                    <input
+                      type="radio"
+                      class="form-radio appearance-none h-5 w-5 bg-purple-300 border border-gray-300 rounded-full checked:bg-purple-300 checked:border-2 checked:border-white focus:ring-2"
+                      name="radio"
+                      checked
+                    >
+                    <input
+                      type="radio"
+                      class="form-radio appearance-none h-5 w-5 bg-green-500 border border-gray-300 rounded-full checked:bg-green-500 checked:border-2 checked:border-white focus:ring-2"
+                      name="radio"
+                      checked
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
     </div>
   </div>
 </div>
@@ -265,6 +322,29 @@
     }
   ],
   "blocks": [
+    {
+      "type": "main",
+      "name": "Carousel card",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Image",
+          "type": "image_picker"
+        },
+        {
+          "id": "title",
+          "label": "Heading",
+          "type": "text",
+          "default": "Image with text"
+        },
+        {
+          "id": "price",
+          "label": "Price",
+          "type": "text",
+          "default": "Price"
+        }
+      ]
+    },
     {
       "type": "heading",
       "name": "t:sections.product-card.blocks.heading.name",
