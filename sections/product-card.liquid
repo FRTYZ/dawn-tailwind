@@ -60,7 +60,7 @@
     <div class="col-auto lg:col-span-6">
       {%- if section.settings.image != blank -%}
         <div
-          id="Banner-{{ section.id }}"
+          id="Image-{{ section.id }}"
           class="image-{{ section.id }}-padding image-opacity-{{ section.id }}"
         >
           {%- assign image_class_full = image_class -%}
@@ -92,7 +92,7 @@
         {%- case block.type -%}
           {%- when 'heading' -%}
             <p
-              class="w-full lg:w-[400px] leading-[40.62px] text-white lg:text-black font-bold  {{ block.settings.heading_content_alignment }} lg:{{ block.settings.heading_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              class="w-full lg:w-[400px] leading-[40.62px] text-white lg:text-black font-bold text-[{{ block.settings.heading_size }}] text-{{ block.settings.heading_content_alignment }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
               {{ block.shopify_attributes }}
               {% if settings.animations_reveal_on_scroll %}
                 data-cascade
@@ -104,7 +104,7 @@
 
           {%- when 'caption' -%}
             <p
-              class="hidden lg:!flex w-[450px] leading-[25.6px] {{ block.settings.text_style }} text-{{ block.settings.content_alignment }} {{ block.settings.text_size }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              class="hidden lg:!flex w-[450px] leading-[25.6px] text-[{{ block.settings.text_size }}] text-{{ block.settings.content_alignment }} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
               {{ block.shopify_attributes }}
               {% if settings.animations_reveal_on_scroll %}
                 data-cascade
@@ -211,8 +211,40 @@
   </div>
 </div>
 
-<!-- Şema -->
+<!-- Swiper JS -->
+{% javascript %}
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.swiper', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      pagination: {
+        enabled: false,
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      slidesPerView: 2,
+      spaceBetween: 10,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 40,
+        },
+      },
+    });
+  });
+{% endjavascript %}
 
+<!-- Şema -->
 {% schema %}
 {
   "name": "t:sections.product-card.name",
@@ -391,27 +423,27 @@
           "id": "heading_size",
           "options": [
             {
-              "value": "text-[31.25px]",
+              "value": "31.25px",
               "label": "t:sections.all.heading_size.options__1.label"
             },
             {
-              "value": "text-[35.25px]",
+              "value": "35.25px",
               "label": "t:sections.all.heading_size.options__2.label"
             },
             {
-              "value": "text-[40px]",
+              "value": "40px",
               "label": "t:sections.all.heading_size.options__3.label"
             },
             {
-              "value": "text-[44px]",
+              "value": "44px",
               "label": "t:sections.all.heading_size.options__4.label"
             },
             {
-              "value": "text-[48pxpx]",
+              "value": "48px",
               "label": "t:sections.all.heading_size.options__5.label"
             }
           ],
-          "default": "text-[31.25px]",
+          "default": "31.25px",
           "label": "t:sections.all.heading_size.label"
         },
         {
@@ -419,19 +451,19 @@
           "id": "heading_content_alignment",
           "options": [
             {
-              "value": "text-left",
+              "value": "left",
               "label": "t:sections.product-card.settings.content_alignment.options__1.label"
             },
             {
-              "value": "text-center",
+              "value": "center",
               "label": "t:sections.product-card.settings.content_alignment.options__2.label"
             },
             {
-              "value": "text-right",
+              "value": "right",
               "label": "t:sections.product-card.settings.content_alignment.options__3.label"
             }
           ],
-          "default": "text-left",
+          "default": "left",
           "label": "t:sections.product-card.settings.content_alignment.label"
         }
       ]
@@ -472,19 +504,19 @@
           "id": "text_size",
           "options": [
             {
-              "value": "text-[12px]",
+              "value": "12px",
               "label": "t:sections.product-card.blocks.caption.settings.caption_size.options__1.label"
             },
             {
-              "value": "text-[16px]",
+              "value": "16px",
               "label": "t:sections.product-card.blocks.caption.settings.caption_size.options__2.label"
             },
             {
-              "value": "text-[20px]",
+              "value": "20px",
               "label": "t:sections.product-card.blocks.caption.settings.caption_size.options__3.label"
             }
           ],
-          "default": "text-[12px]",
+          "default": "12px",
           "label": "t:sections.product-card.blocks.caption.settings.caption_size.label"
         }
       ]

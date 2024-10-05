@@ -93,8 +93,8 @@
           "type": "heading",
           "settings": {
             "heading": "Everyday items, we have something to suit every occasion.",
-            "heading_size": "text-[31.25px]",
-            "heading_content_alignment": "text-left"
+            "heading_size": "31.25px",
+            "heading_content_alignment": "left"
           }
         },
         "caption": {
@@ -102,7 +102,7 @@
           "settings": {
             "caption": "At suspendisse augue lectus arcu, accumsan ut sit posuere vitae sit tincidunt semper eu proin leo gravida cursus.",
             "content_alignment": "left",
-            "text_size": "text-[16px]"
+            "text_size": "16px"
           }
         },
         "button_iabDwq": {
@@ -136,6 +136,14 @@
             "title": "Organic Skinny High Waist Jeans",
             "price": "$33.95"
           }
+        },
+        "main_8FCMUf": {
+          "type": "main",
+          "settings": {
+            "image": "shopify://shop_images/theme_cover_image.jpg",
+            "title": "Organic snapboard",
+            "price": "$35.87"
+          }
         }
       },
       "block_order": [
@@ -144,7 +152,8 @@
         "button_iabDwq",
         "main_rmCEFe",
         "main_kB6WLa",
-        "main_R4rC7m"
+        "main_R4rC7m",
+        "main_8FCMUf"
       ],
       "settings": {
         "image": "shopify://shop_images/bg.png",
